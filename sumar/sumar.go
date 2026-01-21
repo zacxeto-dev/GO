@@ -1,6 +1,6 @@
 package main
 
-/* principios de dise;o 
+/* principios de diseño 
  1- no te repitas
  2-no usar valores literales (estaticos)
  3-modular
@@ -18,18 +18,30 @@ func main ()  {
 	var (
 		numero1 int = 9
 		numero2 int = 8
+		numero3 int
+		numero4 int
 		suma int
 	)
 
 	util.Encabezado("sumar numeros", 36)
 
-	numero1 = util.LeerNumeroEntero("Ingresa primer numero:")
-	numero2 = util.LeerNumeroEntero("Ingresa segundo numero:")
+	numero1 = util.LeerNumeroEntero("Ingresa primer numero :")
+	numero2 = util.LeerNumeroEntero("Ingresa segundo numero :")
+	numero3 = util.LeerNumeroEntero("Ingresa tercer numero :")
+	numero4 = util.LeerNumeroEntero("Ingresa cuarto numero :")
 
-	suma = numero1 + numero2
+	suma = calcularSuma(numero1, numero2, numero3, numero4)
 
 	util.Linea(36)
 	fmt.Println("la suma es", suma)
 	util.Linea(36)
+}
+
+func calcularSuma(numeros ...int) int {
+	var sumatoria int
+	for _, numero := range numeros {
+		sumatoria += numero
+	} 
+	return sumatoria
 }
 

@@ -43,3 +43,22 @@ func LeerNumeroEntero(msj string) int {
 
 }
 
+func LeerNumeroDecimales(msj string) float64 {
+	var numero float64
+
+	for {
+		fmt.Print(msj + ": ")
+		_, err := fmt.Scanln(&numero)
+
+		if err != nil {
+			fmt.Println("Debe escribir un numero")
+
+			var limpiar string
+			fmt.Scanln(&limpiar)
+			continue
+		}
+
+		return numero
+	}
+}
+
