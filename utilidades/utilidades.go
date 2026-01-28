@@ -62,3 +62,20 @@ func LeerNumeroDecimales(msj string) float64 {
 	}
 }
 
+
+func LeerTexto(msj string, aviso string) string {
+	var texto string
+	for {
+		fmt.Print(msj + ": ")
+		fmt.Scanln(&texto)
+
+		if texto != "" {
+			return texto
+		
+		} else {
+			fmt.Printf("Debe Escribir %v... \n", aviso)
+			continue
+		}
+	}
+}
+
